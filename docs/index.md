@@ -17,8 +17,8 @@
     <h1>Getting LoAT</h1>
 
     <p>
-      We provide a <a href="https://github.com/LoAT-developers/LoAT/releases/tag/???">pre-compiled binary of LoAT (Linux, 64 bit)</a>.
-      Moreover, you can find the source code of LoAT at <a href="https://github.com/loat-developers/LoAT/tree/???">GitHub</a>.
+      We provide a <a href="https://github.com/LoAT-developers/LoAT/releases/tag/0.9.0">pre-compiled binary of LoAT (Linux, 64 bit)</a>.
+      Moreover, you can find the source code of LoAT at <a href="https://github.com/loat-developers/LoAT/tree/0.9.0">GitHub</a>.
     </p>
     <p>We refer to the <a href="https://loat-developers.github.io/LoAT/">general LoAT website</a> for further information.</p>
 
@@ -28,14 +28,14 @@
 
     <p>
       We used the examples from the category LIA-Lin (linear CHCs with linear integer arithmetic) from the <a href="https://chc-comp.github.io/2023/">CHC competitions</a> 2023 and 2024, excluding duplicates.
-      They can be found <a href="https://github.com/chc-comp/chc-comp23-benchmarks/tree/main/LIA-lin">here (2023)</a> and <a href="https://github.com/chc-comp/chc-comp24-benchmarks/tree/main/LIA-Lin">here (2024)</a>.
+      They can be found <a href="benchmarks_23.zip">here (2023)</a> and <a href="benchmarks_24.zip">here (2024)</a>.
     </p>
 
     <h2>Tools</h2>
 
     In our evaluation, we considered the following tools and configurations:
     <ul>
-      <li>LoAT ???</li>
+      <li>LoAT 0.9.0</li>
       <ul>
         <li>Transitive Relation Learning (LoAT TRL)</li>
         <ul>
@@ -52,13 +52,13 @@
       </ul>
       <li><a href="https://github.com/Z3Prover/z3">Z3</a> 4.13.3</li>
       <ul>
-        <li>the Spacer algorithm (Spacer)</li>
-        <ul>
-          <li><tt>z3 fp.engine=spacer $INPUT</tt></li>
-        </ul>
-        <li>Spacer with Global Guidance (GSpacer)</li>
+        <li>Spacer with Global Guidance (Z3 GSpacer)</li>
         <ul>
           <li><tt>z3 fp.engine=spacer fp.spacer.global=true $INPUT</tt></li>
+        </ul>
+        <li>Spacer (Z3 Spacer)</li>
+        <ul>
+          <li><tt>z3 fp.engine=spacer $INPUT</tt></li>
         </ul>
         <li>Bounded Model Checking (Z3 BMC)</li>
         <ul>
@@ -67,13 +67,21 @@
       </ul>
       <li><a href="https://github.com/usi-verification-and-security/golem">Golem</a> 0.6.2</li>
       <ul>
-        <li>Split Transition Power Abstraction (Golem STPA)</li>
+        <li>Spacer (Golem Spacer)</li>
         <ul>
-          <li><tt>golem -l QF_LIA -e split-tpa $INPUT</tt></li>
+          <li><tt>golem -l QF_LIA -e spacer $INPUT</tt></li>
+        </ul>
+        <li>Property Directed k-Induction (Golem PDKIND)</li>
+        <ul>
+          <li><tt>golem -l QF_LIA -e pdkind $INPUT</tt></li>
         </ul>
         <li>Interpolation Based Model Checking (Golem IMC)</li>
         <ul>
           <li><tt>golem -l QF_LIA -e imc $INPUT</tt></li>
+        </ul>
+        <li>Transition Power Abstraction (Golem TPA)</li>
+        <ul>
+          <li><tt>golem -l QF_LIA -e split-tpa $INPUT</tt></li>
         </ul>
         <li>Lazy Abstraction with Interpolants (Golem LAWI)</li>
         <ul>
@@ -82,14 +90,6 @@
         <li>Predicate Abstraction (Golem PA)</li>
         <ul>
           <li><tt>golem -l QF_LIA -e pa $INPUT</tt></li>
-        </ul>
-        <li>Property Directed k-Induction (Golem PDKIND)</li>
-        <ul>
-          <li><tt>golem -l QF_LIA -e pdkind $INPUT</tt></li>
-        </ul>
-        <li>Spacer (Golem Spacer)</li>
-        <ul>
-          <li><tt>golem -l QF_LIA -e spacer $INPUT</tt></li>
         </ul>
         <li>Bounded Model Checking (Golem BMC)</li>
         <ul>
