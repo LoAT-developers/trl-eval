@@ -17,8 +17,8 @@
     <h1>Getting LoAT</h1>
 
     <p>
-      We provide a <a href="https://github.com/LoAT-developers/LoAT/releases/tag/0.9.0">pre-compiled binary of LoAT (Linux, 64 bit)</a>.
-      Moreover, you can find the source code of LoAT at <a href="https://github.com/loat-developers/LoAT/tree/0.9.0">GitHub</a>.
+      We provide a <a href="https://github.com/LoAT-developers/LoAT/releases/tag/v0.9.0">pre-compiled binary of LoAT (Linux, 64 bit)</a>.
+      Moreover, you can find the source code of LoAT at <a href="https://github.com/loat-developers/LoAT/tree/v0.9.0">GitHub</a>.
     </p>
     <p>We refer to the <a href="https://loat-developers.github.io/LoAT/">general LoAT website</a> for further information.</p>
 
