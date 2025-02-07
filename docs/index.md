@@ -114,18 +114,18 @@
     </p>
     <p>
       <tt>
-        $ loat-static --format horn --engine trl --mode safety unsafe.smt2<br/>
+        $ loat-static --engine trl --mode safety unsafe.smt2<br/>
         > unknown
       </tt>
     </p>
     However, LoAT can prove unsafety with the SMT solvers <a href="https://ffrohn.github.io/swine/">SwInE</a>, <a href="https://github.com/Z3Prover/z3">Z3</a>, and <a href="https://cvc5.github.io/">CVC5</a>:
     <p>
       <tt>
-        $ loat-static --format horn --engine trl --mode safety --smt swine unsafe.smt2<br/>
+        $ loat-static --engine trl --mode safety --smt swine unsafe.smt2<br/>
         > unsat<br/>
-        $ loat-static --format horn --engine trl --mode safety --smt z3 unsafe.smt2<br/>
+        $ loat-static --engine trl --mode safety --smt z3 unsafe.smt2<br/>
         > unsat<br/>
-        $ loat-static --format horn --engine trl --mode safety --smt cvc5 unsafe.smt2<br/>
+        $ loat-static --engine trl --mode safety --smt cvc5 unsafe.smt2<br/>
         > unsat
       </tt>
     </p>
@@ -136,13 +136,13 @@
     Thus, ABMC can prove unsafety with all supported SMT solvers:
     <p>
       <tt>
-        $ loat-static --format horn --engine abmc --mode safety --smt yices unsafe.smt2<br/>
+        $ loat-static --engine abmc --mode safety --smt yices unsafe.smt2<br/>
         > unsat<br/>
-        $ loat-static --format horn --engine abmc --mode safety --smt swine unsafe.smt2<br/>
+        $ loat-static --engine abmc --mode safety --smt swine unsafe.smt2<br/>
         > unsat<br/>
-        $ loat-static --format horn --engine abmc --mode safety --smt z3 unsafe.smt2<br/>
+        $ loat-static --engine abmc --mode safety --smt z3 unsafe.smt2<br/>
         > unsat<br/>
-        $ loat-static --format horn --engine abmc --mode safety --smt cvc5 unsafe.smt2<br/>
+        $ loat-static --engine abmc --mode safety --smt cvc5 unsafe.smt2<br/>
         > unsat
       </tt>
     </p>
