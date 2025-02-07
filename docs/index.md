@@ -106,6 +106,50 @@
 
     <a href="./table.html">Here</a> you can find a table with the detailed results of our benchmarks.
 
+    <h1>Examples from the Paper</h1>
+
+    <p>
+      <a href="./leading.smt2">Here</a> you can find our leading exmaple, and <a href="./unsafe.smt2">here</a> you can find our example for proving unsafety from Section 5 of our paper.
+      Note that for the latter, the default configuration of LoAT fails:
+    </p>
+    <p>
+      <tt>
+        $ loat-static --format horn --engine trl --mode safety unsafe.smt2<br/>
+        > unknown
+      </tt>
+    </p>
+    However, LoAT can prove unsafety with the SMT solvers <a href="https://ffrohn.github.io/swine/">SwInE</a>, <a href="https://github.com/Z3Prover/z3">Z3</a>, and <a href="https://cvc5.github.io/">CVC5</a>:
+    <p>
+      <tt>
+        $ loat-static --format horn --engine trl --mode safety --smt swine unsafe.smt2<br/>
+        > unsat<br/>
+        $ loat-static --format horn --engine trl --mode safety --smt z3 unsafe.smt2<br/>
+        > unsat<br/>
+        $ loat-static --format horn --engine trl --mode safety --smt cvc5 unsafe.smt2<br/>
+        > unsat
+      </tt>
+    </p>
+    By default, LoAT's implementation of TRL uses the SMT solver <a href="https://yices.csl.sri.com/">Yices</a>.
+    For this example, LoAT obtains different traces with Yices than with the other solvers.
+    As TRL just considers a single trace for proving unsafety (see the discussion of related work in our paper), this prevents it from proving unsafety.
+    In contrast, our technique <a href="https://loat-developers.github.io/abmc-eval/">Accelerated Bounded Model Checking</a> (ABMC -- again, see the discussion of related work in our paper) considers many different traces for proving unsafety.
+    Thus, ABMC can prove unsafety with all supported SMT solvers:
+    <p>
+      <tt>
+        $ loat-static --format horn --engine abmc --mode safety --smt yices unsafe.smt2<br/>
+        > unsat<br/>
+        $ loat-static --format horn --engine abmc --mode safety --smt swine unsafe.smt2<br/>
+        > unsat<br/>
+        $ loat-static --format horn --engine abmc --mode safety --smt z3 unsafe.smt2<br/>
+        > unsat<br/>
+        $ loat-static --format horn --engine abmc --mode safety --smt cvc5 unsafe.smt2<br/>
+        > unsat
+      </tt>
+    </p>
+    <p>
+      This shows that ABMC is more robust for proving unsafety.
+      However, TRL is far superior for proving safety (see the experiments above and in our paper).
+    </p>
   </body>
 </html>
 
