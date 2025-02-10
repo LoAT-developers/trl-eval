@@ -109,7 +109,7 @@
     <h1>Examples from the Paper</h1>
 
     <p>
-      <a href="./leading.smt2">Here</a> you can find our leading exmaple, and <a href="./unsafe.smt2">here</a> you can find our example for proving unsafety from Section 5 of our paper.
+      <a href="./leading.smt2">Here</a> you can find our leading exmaple, and <a href="./unsafe.smt2">here</a> you can find our example for proving unsafety from Section 5 of our <a href="https://arxiv.org/abs/2502.04761">paper</a>.
       Note that for the latter, the default configuration of LoAT fails:
     </p>
     <p>
@@ -131,8 +131,8 @@
     </p>
     By default, LoAT's implementation of TRL uses the SMT solver <a href="https://yices.csl.sri.com/">Yices</a>.
     For this example, LoAT obtains different traces with Yices than with the other solvers.
-    As TRL just considers a single trace for proving unsafety (see the discussion of related work in our paper), this prevents it from proving unsafety.
-    In contrast, our technique <a href="https://loat-developers.github.io/abmc-eval/">Accelerated Bounded Model Checking</a> (ABMC -- again, see the discussion of related work in our paper) considers many different traces for proving unsafety.
+    As TRL just considers a single trace for proving unsafety (see the discussion of related work in our <a href="https://arxiv.org/abs/2502.04761">paper</a>), this prevents it from proving unsafety.
+    In contrast, our technique <a href="https://loat-developers.github.io/abmc-eval/">Accelerated Bounded Model Checking</a> (ABMC -- again, see the discussion of related work in our <a href="https://arxiv.org/abs/2502.04761">paper</a>) considers many different traces for proving unsafety.
     Thus, ABMC can prove unsafety with all supported SMT solvers:
     <p>
       <tt>
@@ -148,7 +148,7 @@
     </p>
     <p>
       This shows that ABMC is more robust for proving unsafety.
-      However, TRL is far superior for proving safety (see the experiments above and in our paper).
+      However, TRL is far superior for proving safety (see the experiments above and in our <a href="https://arxiv.org/abs/2502.04761">paper</a>).
     </p>
   </body>
 </html>
