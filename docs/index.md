@@ -109,7 +109,7 @@
     <h1>Example from the Paper</h1>
 
     <p>
-      <a href="./leading.smt2">Here</a> you can find the leading exmaple from our paper.
+      <a href="./leading.smt2">Here</a> you can find the leading example from our paper.
     </p>
 
   </body>

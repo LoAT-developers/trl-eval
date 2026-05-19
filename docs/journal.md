@@ -11,7 +11,7 @@
   <body>
 
     <p>
-      This is the empirical evaluation of the implementation of our techniques from the paper <a href="https://arxiv.org/abs/2502.04761"><i>Infinite State Model Checking by Learning Transitive Relations</i></a> in our tool LoAT.
+      This is the empirical evaluation of the implementation of our techniques from the paper <a href="main.pdf"><i>Infinite State Model Checking by Learning Transitive Relations</i></a> in our tool LoAT.
     </p>
 
     <h1>Getting LoAT</h1>
@@ -120,7 +120,7 @@
     <h1>Example from the Paper</h1>
 
     <p>
-      <a href="./leading.smt2">Here</a> you can find the leading exmaple from our paper.
+      <a href="./leading.smt2">Here</a> you can find the leading example from our paper.
     </p>
 
   </body>
